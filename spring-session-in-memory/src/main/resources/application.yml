@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-session
+  session:
+    store-type: none # Default is none, which means use HttpSession (in-memory)
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

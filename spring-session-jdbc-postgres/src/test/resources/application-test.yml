@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: spring-session-jdbc-postgres
+  session:
+    jdbc:
+      initialize-schema: always # Ensures schema.sql runs on startup (use 'never' in production)
+  security:
+    user:
+      name: admin
+      password: admin123
+  datasource:
+    url: jdbc:postgresql://localhost:5432/session_db
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always  # Ensures schema.sql runs on startup (use 'never' in production)
+      platform: postgres # Prevents Hibernate from overriding the jsonb data type with varchar data type.
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-app-boilerplate
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
