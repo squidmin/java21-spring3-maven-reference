@@ -28,13 +28,17 @@ mvn spring-boot:run \
 "
 ```
 
+![04_run-using-maven-cli.gif](docs%2Fimg%2F04_run-using-maven-cli.gif)
+
 ## Run tests
 
 ```bash
 mvn clean test \
   -DskipTests \
-  -DGCP_PROJECT_ID=${GCP_PROJECT_ID}
+  -DPROJECT_ID=${PROJECT_ID}
 ```
+
+![05_run_tests_1.gif](docs%2Fimg%2F05_run_tests_1.gif)
 
 ## Build image
 
@@ -55,3 +59,5 @@ docker run -p 8080:8080 \
   -e GKMS_KEY_NAME \
   google-cloud-storage-ref
 ```
+
+![06_run_docker_container_1.gif](docs%2Fimg%2F06_run_docker_container_1.gif)
